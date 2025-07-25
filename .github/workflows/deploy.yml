@@ -16,7 +16,7 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v4
       with:
-        name: app-artifact            # <--- Must match name in build.yml
+        name: app-artifact.zip             # <--- Must match name in build.yml
         path: ./downloaded
 
     - name: Show downloaded files
