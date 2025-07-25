@@ -3,7 +3,7 @@ name: Download and Deploy
 
 on:
   workflow_run:
-    workflows: ["Build and Upload"]
+    workflows: ["Build and Upload"]   # <--- Must match build.yml name exactly
     types:
       - completed
 
@@ -16,17 +16,10 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v4
       with:
-        name: app-artifact
+        name: app-artifact            # <--- Must match name in build.yml
         path: ./downloaded
 
-    - name: List contents
+    - name: Show downloaded files
       run: |
-        echo "Downloaded artifact content:"
-        ls -l ./downloaded
-        
-    - name: Show current dir
-      run: |
-       echo "Working directory:"
-       pwd
-       echo "Files:"
-       ls -l ./downloaded
+        echo "Listing downloaded files:"
+        ls -R ./downloaded
