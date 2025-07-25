@@ -21,3 +21,8 @@ jobs:
       with:
         name: app-artifact
         path: app.zip
+
+    - name: Debug artifact existence
+      run: |
+       ls -l
+
