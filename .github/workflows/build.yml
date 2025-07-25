@@ -21,3 +21,7 @@ jobs:
       with:
         name: app-artifact           # <--- Important: matches deploy
         path: app.zip
+
+    - name: Check artifact exists before upload
+      run: ls -lh app.zip
+
