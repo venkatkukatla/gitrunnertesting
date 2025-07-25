@@ -23,3 +23,8 @@ jobs:
       run: |
         echo "Listing downloaded files:"
         ls -R ./downloaded
+        
+    - name: Confirm download
+      run: |
+       echo "Downloaded files:"
+       find ./downloaded || echo "Nothing found"
