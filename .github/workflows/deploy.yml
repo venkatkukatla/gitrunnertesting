@@ -23,3 +23,10 @@ jobs:
       run: |
         echo "Downloaded artifact content:"
         ls -l ./downloaded
+        
+    - name: Show current dir
+      run: |
+       echo "Working directory:"
+       pwd
+       echo "Files:"
+       ls -l ./downloaded
